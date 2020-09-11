@@ -1,0 +1,264 @@
+#definizione dei prefissi
+Prefix: : <http://purl.org/net/almond#>
+Prefix: ssn: <http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#>
+Prefix: iot-lite: <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#>
+
+#definizione dell'URI assegnato all'ontologia corrente
+Ontology: <http://purl.org/net/almond>
+
+#Definizione delle Classi
+Class: ssn:Device #classe esterna appartenente all'ontologia SSN 
+Class: iot-lite:Service #classe esterna appartenente all'ontologia iot-lite 
+Class: :DeviceClass 
+Class: :Loader
+Class: :Configuration
+Class: :RESTLoader 
+	SubClassOf: :Loader 
+	DisjointWith: :RSSLoader, :CustomLoader 
+Class: :RSSLoader
+	SubClassOf: :Loader 
+        DisjointWith: :RESTLoader, :CustomLoader 
+Class: :CustomLoader
+	SubClassOf: :Loader 
+	DisjointWith: :RSSLoader, :RESTLoader 
+Class: :BasicConfiguration
+	SubClassOf: :Configuration 
+	DisjointWith: :ComplexConfiguration 
+Class: :ComplexConfiguration
+	SubClassOf: :Configuration 
+	DisjointWith: :BasicConfiguration 
+Class: :APIKeyConfiguration 
+	SubClassOf: :BasicConfiguration 
+	DisjointWith: :FormConfiguration 
+Class: :FormConfiguration
+	SubClassOf: :BasicConfiguration 
+	DisjointWith: :APIKeyConfiguration 
+Class: :AuthenticationType
+Class: :BasicAuthentication
+	SubClassOf: :AuthenticationType 
+	DisjointWith: :OpenAuthentication, :DiscoveryAuthentication 
+Class: :OpenAuthentication
+	SubClassOf: :AuthenticationType 
+	DisjointWith: :BasicAuthentication, :DiscoveryAuthentication 
+Class: :DiscoveryAuthentication
+	SubClassOf: :AuthenticationType 
+	DisjointWith: :OpenAuthentication, :BasicAuthentication 
+Class: :Function
+	SubClassOf: iot-lite:Service 
+Class: :Query
+	SubClassOf: :Function 
+	DisjointWith: :Action 
+Class: :Action
+	SubClassOf: :Function 
+	DisjointWith: :Query 
+Class: :Qualifier 
+Class: :Parameter 
+Class: :DataType
+Class: :PrimitiveType
+	SubClassOf: :DataType 
+	DisjointWith: :ComplexType
+Class: :ComplexType
+	SubClassOf: :DataType 
+	DisjointWith: :PrimitiveType
+Class: :Boolean
+	SubClassOf: :PrimitiveType 
+	DisjointWith: :String, :Number 
+Class: :String
+	SubClassOf: :PrimitiveType 
+	DisjointWith: :Boolean, :Number 
+Class: :Number
+	SubClassOf: :PrimitiveType 
+	DisjointWith: :Boolean, :String 
+Class: :Enumeration
+	SubClassOf: :ComplexType 
+	DisjointWith: :Entity, :Measure, :Currency, :Date, :Time, :Location, :Array, :Tuple 
+Class: :Entity
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Measure, :Currency, :Date, :Time, :Location, :Array, :Tuple 
+Class: :Measure
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Currency, :Date, :Time, :Location, :Array, :Tuple 
+Class: :Currency
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Measure, :Date, :Time, :Location, :Array, :Tuple 
+Class: :Date
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Measure, :Currency, :Time, :Location, :Array, :Tuple 
+Class: :Time
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Measure, :Currency, :Date, :Location, :Array, :Tuple 
+Class: :Location
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Measure, :Currency, :Date, :Time, :Array, :Tuple 
+Class: :Array
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Measure, :Currency, :Date, :Time, :Location, :Tuple 
+Class: :Tuple
+	SubClassOf: :ComplexType 
+	DisjointWith: :Enumeration, :Entity, :Measure, :Currency, :Date, :Time, :Location 
+Class: :Element 
+Class: :Annotation
+Class: :NaturalLanguageAnnotation
+	SubClassOf: :Annotation 
+	DisjointWith: :ImplementationAnnotation 
+Class: :ImplementationAnnotation
+	SubClassOf: :Annotation 
+	DisjointWith: :NaturalLanguageAnnotation 
+
+#classi ponte
+Class: :InputParameter 
+Class: :Failover 
+
+#Enunciati sulle proprietà:
+ObjectProperty: :hasLoader #fatta
+	Domain: :DeviceClass 
+	Range: :Loader 
+	Characteristics: Functional, InverseFunctional #relazione uno a uno
+ObjectProperty: :hasConfig #fatta
+	Domain: :DeviceClass
+	Range: :Configuration 
+	Characteristics: Functional, InverseFunctional
+ObjectProperty: :hasFunction 
+	Domain: :DeviceClass 
+	Range: :Function
+	Characteristics: InverseFunctional
+ObjectProperty: :hasAnnotation 
+	Domain: :DeviceClass, :Function, :Parameter 
+	Range: :Annotation
+	Characteristics: InverseFunctional
+ObjectProperty: :failover 
+	Domain: :DeviceClass
+	Range: :Failover
+	Characteristics: InverseFunctional
+ObjectProperty: :run 
+	Domain: :Failover
+	Range: :DeviceClass
+	Characteristics: Functional
+DataProperty: :priority 
+	Domain: :Failover
+	Range: xsd:nonNegativeInteger
+	Characteristics: Functional
+DataProperty: :deviceClassId 
+	Domain: :DeviceClass
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :hasAuthType 
+	Domain: :ComplexConfiguration 
+	Range: :AuthenticationType 
+	Characteristics: Functional, InverseFunctional
+DataProperty: :apiKey 
+	Domain: :APIKeyConfiguration 
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :hasParameter 
+	Domain: :FormConfiguration, :BasicAuthentication 
+	Range: :Parameter
+	Characteristics: InverseFunctional
+DataProperty: :clientId 
+	Domain: :OpenAuthentication 
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :clientSecret 
+	Domain: :OpenAuthentication 
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :protocol 
+	Domain: :DiscoveryAuthentication 
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :hasInputParam 
+	Domain: :Function  
+	Range: :InputParameter
+	Characteristics: InverseFunctional
+ObjectProperty: :connectTo 
+	Domain: :InputParameter  
+	Range: :Parameter
+	Characteristics: Functional, InverseFunctional
+DataProperty: :isParamRequested 
+	Domain: :InputParameter
+	Range: xsd:boolean
+	Characteristics: Functional
+DataProperty: :functionId 
+	Domain: :Function 
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :hasQualifier 
+	Domain: :Query  
+	Range: :Qualifier
+	Characteristics: InverseFunctional
+ObjectProperty: :hasOutputParam 
+	Domain: :Query  
+	Range: :Parameter
+	Characteristics: InverseFunctional
+DataProperty: :qualifierName 
+	Domain: :Qualifier 
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :hasDataType 
+	Domain: :Parameter  
+	Range: :DataType 
+	Characteristics: Functional
+DataProperty: :parameterName 
+	Domain: :Parameter 
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :entityName  
+	Domain: :Entity 
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :entityId 
+	Domain: :Entity 
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :unitValue  
+	Domain: :Measure 
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :isTypeOf 
+	Domain: :Element  
+	Range: :DataType 
+	Characteristics: Functional
+DataProperty: :elementValue 
+	Domain: :Element 
+	Range: xsd:string
+	Characteristics: Functional
+ObjectProperty: :hasElement 
+	Domain: :Annotation  
+	Range: :Element 
+	Characteristics: Functional, InverseFunctional
+DataProperty: :annotationKey 
+	Domain: :Annotation 
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :isAnnRequested 
+	Domain: :Annotation 
+	Range: xsd:boolean
+	Characteristics: Functional
+ObjectProperty: :hasDeviceClass 
+	Domain: ssn:Device  
+	Range: :DeviceClass 
+	Characteristics: Functional, InverseFunctional
+DataProperty: :deviceDescription
+	Domain: ssn:Device
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :deviceCategory
+	Domain: ssn:Device
+	Range: xsd:string
+	Characteristics: Functional
+DataProperty: :deviceWebSite
+	Domain: ssn:Device
+	Range: xsd:anyURI
+	Characteristics: Functional
+DataProperty: :deviceSourceCode
+	Domain: ssn:Device
+	Range: xsd:anyURI
+	Characteristics: Functional
+DataProperty: :deviceFaults
+	Domain: ssn:Device
+	Range: xsd:anyURI
+	Characteristics: Functional
+DataProperty: iot-lite:deviceId
+	Domain: ssn:Device
+	Range: xsd:string
+	Characteristics: Functional
