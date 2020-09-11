@@ -1,0 +1,495 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://purl.org/net/almond>
+
+
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://purl.org/net/almond#connectTo>
+
+    
+ObjectProperty: <http://purl.org/net/almond#failover>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasAnnotation>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasAuthType>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasConfig>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasDataType>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasDeviceClass>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasElement>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasFunction>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasInputParam>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasLoader>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasOutputParam>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasParameter>
+
+    
+ObjectProperty: <http://purl.org/net/almond#hasQualifier>
+
+    
+ObjectProperty: <http://purl.org/net/almond#isTypeOf>
+
+    
+ObjectProperty: <http://purl.org/net/almond#run>
+
+    
+DataProperty: <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#deviceId>
+
+    
+DataProperty: <http://purl.org/net/almond#annotationKey>
+
+    
+DataProperty: <http://purl.org/net/almond#apiKey>
+
+    
+DataProperty: <http://purl.org/net/almond#clientId>
+
+    
+DataProperty: <http://purl.org/net/almond#clientSecret>
+
+    
+DataProperty: <http://purl.org/net/almond#deviceCategory>
+
+    
+DataProperty: <http://purl.org/net/almond#deviceClassId>
+
+    
+DataProperty: <http://purl.org/net/almond#deviceDescription>
+
+    
+DataProperty: <http://purl.org/net/almond#deviceFaults>
+
+    
+DataProperty: <http://purl.org/net/almond#deviceSourceCode>
+
+    
+DataProperty: <http://purl.org/net/almond#deviceWebSite>
+
+    
+DataProperty: <http://purl.org/net/almond#elementValue>
+
+    
+DataProperty: <http://purl.org/net/almond#entityId>
+
+    
+DataProperty: <http://purl.org/net/almond#entityName>
+
+    
+DataProperty: <http://purl.org/net/almond#functionId>
+
+    
+DataProperty: <http://purl.org/net/almond#isAnnRequested>
+
+    
+DataProperty: <http://purl.org/net/almond#isParamRequested>
+
+    
+DataProperty: <http://purl.org/net/almond#parameterName>
+
+    
+DataProperty: <http://purl.org/net/almond#priority>
+
+    
+DataProperty: <http://purl.org/net/almond#protocol>
+
+    
+DataProperty: <http://purl.org/net/almond#qualifierName>
+
+    
+DataProperty: <http://purl.org/net/almond#unitValue>
+
+    
+Class: <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service>
+
+    
+Class: <http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device>
+
+    
+Class: <http://purl.org/net/almond#APIKeyConfiguration>
+
+    
+Class: <http://purl.org/net/almond#Action>
+
+    
+Class: <http://purl.org/net/almond#Annotation>
+
+    
+Class: <http://purl.org/net/almond#Array>
+
+    
+Class: <http://purl.org/net/almond#AuthenticationType>
+
+    
+Class: <http://purl.org/net/almond#BasicAuthentication>
+
+    
+Class: <http://purl.org/net/almond#BasicConfiguration>
+
+    
+Class: <http://purl.org/net/almond#Boolean>
+
+    
+Class: <http://purl.org/net/almond#ComplexConfiguration>
+
+    
+Class: <http://purl.org/net/almond#ComplexType>
+
+    
+Class: <http://purl.org/net/almond#Configuration>
+
+    
+Class: <http://purl.org/net/almond#Currency>
+
+    
+Class: <http://purl.org/net/almond#CustomLoader>
+
+    
+Class: <http://purl.org/net/almond#DataType>
+
+    
+Class: <http://purl.org/net/almond#Date>
+
+    
+Class: <http://purl.org/net/almond#DeviceClass>
+
+    
+Class: <http://purl.org/net/almond#DiscoveryAuthentication>
+
+    
+Class: <http://purl.org/net/almond#Element>
+
+    
+Class: <http://purl.org/net/almond#Entity>
+
+    
+Class: <http://purl.org/net/almond#Enumeration>
+
+    
+Class: <http://purl.org/net/almond#Failover>
+
+    
+Class: <http://purl.org/net/almond#FormConfiguration>
+
+    
+Class: <http://purl.org/net/almond#Function>
+
+    
+Class: <http://purl.org/net/almond#ImplementationAnnotation>
+
+    
+Class: <http://purl.org/net/almond#InputParameter>
+
+    
+Class: <http://purl.org/net/almond#Loader>
+
+    
+Class: <http://purl.org/net/almond#Location>
+
+    
+Class: <http://purl.org/net/almond#Measure>
+
+    
+Class: <http://purl.org/net/almond#NaturalLanguageAnnotation>
+
+    
+Class: <http://purl.org/net/almond#Number>
+
+    
+Class: <http://purl.org/net/almond#OpenAuthentication>
+
+    
+Class: <http://purl.org/net/almond#Parameter>
+
+    
+Class: <http://purl.org/net/almond#PrimitiveType>
+
+    
+Class: <http://purl.org/net/almond#Qualifier>
+
+    
+Class: <http://purl.org/net/almond#Query>
+
+    
+Class: <http://purl.org/net/almond#RESTLoader>
+
+    
+Class: <http://purl.org/net/almond#RSSLoader>
+
+    
+Class: <http://purl.org/net/almond#String>
+
+    
+Class: <http://purl.org/net/almond#Time>
+
+    
+Class: <http://purl.org/net/almond#Tuple>
+
+    
+Individual: <http://purl.org/net/almond#annotation1>
+
+    Types: 
+        <http://purl.org/net/almond#NaturalLanguageAnnotation>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasElement>  <http://purl.org/net/almond#element1>,
+     <http://purl.org/net/almond#annotationKey>  "canonical"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#annotation2>
+
+    Types: 
+        <http://purl.org/net/almond#NaturalLanguageAnnotation>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasElement>  <http://purl.org/net/almond#element2>,
+     <http://purl.org/net/almond#annotationKey>  "confirmation"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#annotation3>
+
+    Types: 
+        <http://purl.org/net/almond#ImplementationAnnotation>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasElement>  <http://purl.org/net/almond#element3>,
+     <http://purl.org/net/almond#annotationKey>  "doc"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#configuration>
+
+    Types: 
+        <http://purl.org/net/almond#BasicConfiguration>
+    
+    
+Individual: <http://purl.org/net/almond#count>
+
+    Types: 
+        <http://purl.org/net/almond#Parameter>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasDataType>  <http://purl.org/net/almond#type1>,
+     <http://purl.org/net/almond#parameterName>  "count"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#device1>
+
+    Types: 
+        <http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasDeviceClass>  <http://purl.org/net/almond#thecatapi>,
+     <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#deviceId>  "com.thecatapi"^^xsd:string,
+     <http://purl.org/net/almond#deviceCategory>  "Web"^^xsd:string,
+     <http://purl.org/net/almond#deviceDescription>  "Visualizza immagini di gatti"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#element1>
+
+    Types: 
+        <http://purl.org/net/almond#Element>
+    
+    Facts:  
+     <http://purl.org/net/almond#isTypeOf>  <http://purl.org/net/almond#type5>,
+     <http://purl.org/net/almond#elementValue>  "get cat on thecatapi"^^xsd:string
+    
+    DifferentFrom: 
+        <http://purl.org/net/almond#element2>,
+        <http://purl.org/net/almond#element3>
+    
+    
+Individual: <http://purl.org/net/almond#element2>
+
+    Types: 
+        <http://purl.org/net/almond#Element>
+    
+    Facts:  
+     <http://purl.org/net/almond#isTypeOf>  <http://purl.org/net/almond#type5>,
+     <http://purl.org/net/almond#elementValue>  "cat pictures"^^xsd:string
+    
+    DifferentFrom: 
+        <http://purl.org/net/almond#element1>,
+        <http://purl.org/net/almond#element3>
+    
+    
+Individual: <http://purl.org/net/almond#element3>
+
+    Types: 
+        <http://purl.org/net/almond#Element>
+    
+    Facts:  
+     <http://purl.org/net/almond#isTypeOf>  <http://purl.org/net/almond#type5>,
+     <http://purl.org/net/almond#elementValue>  "get many cat pictures"^^xsd:string
+    
+    DifferentFrom: 
+        <http://purl.org/net/almond#element1>,
+        <http://purl.org/net/almond#element2>
+    
+    
+Individual: <http://purl.org/net/almond#get>
+
+    Types: 
+        <http://purl.org/net/almond#Query>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasAnnotation>  <http://purl.org/net/almond#annotation1>,
+     <http://purl.org/net/almond#hasAnnotation>  <http://purl.org/net/almond#annotation2>,
+     <http://purl.org/net/almond#hasAnnotation>  <http://purl.org/net/almond#annotation3>,
+     <http://purl.org/net/almond#hasInputParam>  <http://purl.org/net/almond#inputParam>,
+     <http://purl.org/net/almond#hasOutputParam>  <http://purl.org/net/almond#image_id>,
+     <http://purl.org/net/almond#hasOutputParam>  <http://purl.org/net/almond#link>,
+     <http://purl.org/net/almond#hasOutputParam>  <http://purl.org/net/almond#picture_url>,
+     <http://purl.org/net/almond#hasQualifier>  <http://purl.org/net/almond#list>,
+     <http://purl.org/net/almond#functionId>  "get"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#image_id>
+
+    Types: 
+        <http://purl.org/net/almond#Parameter>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasDataType>  <http://purl.org/net/almond#type2>,
+     <http://purl.org/net/almond#parameterName>  "image_id"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#inputParam>
+
+    Types: 
+        <http://purl.org/net/almond#InputParameter>
+    
+    Facts:  
+     <http://purl.org/net/almond#connectTo>  <http://purl.org/net/almond#count>,
+     <http://purl.org/net/almond#isParamRequested>  false
+    
+    
+Individual: <http://purl.org/net/almond#link>
+
+    Types: 
+        <http://purl.org/net/almond#Parameter>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasDataType>  <http://purl.org/net/almond#type4>,
+     <http://purl.org/net/almond#parameterName>  "link"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#list>
+
+    Types: 
+        <http://purl.org/net/almond#Qualifier>
+    
+    Facts:  
+     <http://purl.org/net/almond#qualifierName>  "list"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#loader>
+
+    Types: 
+        <http://purl.org/net/almond#CustomLoader>
+    
+    
+Individual: <http://purl.org/net/almond#picture_url>
+
+    Types: 
+        <http://purl.org/net/almond#Parameter>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasDataType>  <http://purl.org/net/almond#type3>,
+     <http://purl.org/net/almond#parameterName>  "picture_url"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#thecatapi>
+
+    Types: 
+        <http://purl.org/net/almond#DeviceClass>
+    
+    Facts:  
+     <http://purl.org/net/almond#hasConfig>  <http://purl.org/net/almond#configuration>,
+     <http://purl.org/net/almond#hasFunction>  <http://purl.org/net/almond#get>,
+     <http://purl.org/net/almond#hasLoader>  <http://purl.org/net/almond#loader>,
+     <http://purl.org/net/almond#deviceClassId>  "com.thecatapi"^^xsd:string
+    
+    
+Individual: <http://purl.org/net/almond#type1>
+
+    Types: 
+        <http://purl.org/net/almond#Number>
+    
+    
+Individual: <http://purl.org/net/almond#type2>
+
+    Types: 
+        <http://purl.org/net/almond#Entity>
+    
+    Facts:  
+     <http://purl.org/net/almond#entityId>  "com.thecatapi:image_id"^^xsd:string,
+     <http://purl.org/net/almond#entityName>  "com.thecatapi:image_id"^^xsd:string
+    
+    DifferentFrom: 
+        <http://purl.org/net/almond#type3>,
+        <http://purl.org/net/almond#type4>
+    
+    
+Individual: <http://purl.org/net/almond#type3>
+
+    Types: 
+        <http://purl.org/net/almond#Entity>
+    
+    Facts:  
+     <http://purl.org/net/almond#entityId>  "tt:picture"^^xsd:string,
+     <http://purl.org/net/almond#entityName>  "tt:picture"^^xsd:string
+    
+    DifferentFrom: 
+        <http://purl.org/net/almond#type2>,
+        <http://purl.org/net/almond#type4>
+    
+    
+Individual: <http://purl.org/net/almond#type4>
+
+    Types: 
+        <http://purl.org/net/almond#Entity>
+    
+    Facts:  
+     <http://purl.org/net/almond#entityId>  "tt:url"^^xsd:string,
+     <http://purl.org/net/almond#entityName>  "tt:url"^^xsd:string
+    
+    DifferentFrom: 
+        <http://purl.org/net/almond#type2>,
+        <http://purl.org/net/almond#type3>
+    
+    
+Individual: <http://purl.org/net/almond#type5>
+
+    Types: 
+        <http://purl.org/net/almond#String>
+    
+    

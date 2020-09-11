@@ -1,0 +1,17 @@
+class @com.thecatapi {
+	import loader from @org.thingpedia.v2();
+	import config from @org.thingpedia.config.none();
+
+	list query get(in opt count : Number,
+		out picture_url : Entity(tt:picture),
+		out link : Entity(tt:url),
+		out image_id : Entity(com.thecatapi:image_id))
+
+#_[canonical="get cat on thecatapi"]
+#_[confirmation="cat pictures"]
+#[doc="get many cat pictures"]
+;
+
+
+	
+}
